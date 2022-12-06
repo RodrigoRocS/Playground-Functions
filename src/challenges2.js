@@ -1,28 +1,29 @@
 // Desafio 11 - Crie a função generatePhoneNumber
 // eslint-disable-next-line complexity, sonarjs/cognitive-complexity
 const generatePhoneNumber = (param) => {
-  let repeat = 0;
   if (param.length !== 11) {
     return 'Array com tamanho incorreto.';
   }
-  if (repeat >= 3){
-    return 'não é possível gerar um número de telefone com esses valores';
-  }
-  for (let index = 0; index < param.length; index += 1) {
-    for(let index2 = 0; index < param.length; index += 1) {
-   if(param[index] === param[index2]) {   
-   repeat += 1;
-    }
-    }
   for (let index = 0; index < param.length; index += 1) {
     if (param[index] < 0 || param[index] > 9) {
       return 'não é possível gerar um número de telefone com esses valores';
     }
   }
-  // eslint-disable-next-line max-len
+
+  let contador = 0;
+  for (let index = 0; index < param.length; index += 1) {
+    contador = 0;
+    for (let index2 = 0; index2 < param.length; index2 += 1) {
+      if (param[index] === param[index2]) {
+        contador += 1;
+      }
+    }
+    if (contador >= 3) {
+      return 'não é possível gerar um número de telefone com esses valores';
+    }
+  }
   return `(${param[0]}${param[1]}) ${param[2]}${param[3]}${param[4]}${param[5]}${param[6]}-${param[7]}${param[8]}${param[9]}${param[10]}`;
 };
-}
 
 // Desafio 12 -  Crie a função triangleCheck
 const triangleCheck = (lineA, lineB, lineC) => {
