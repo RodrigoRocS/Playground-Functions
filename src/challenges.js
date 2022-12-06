@@ -31,11 +31,40 @@ const highestCount = (array) => {
     }
   }
   return counter;
-}
+};
 
 // Desafio 6 - Crie as funções calcTriangleArea, calcRectangleArea e calcAllAreas
+const calcTriangleArea = (base, height) => (base * height) / 2;
+const calcRectangleArea = (base, height) => base * height;
+const calcAllAreas = (base, height, form) => {
+  if (form === 'triângulo') {
+    return `O valor da área do triângulo é de: ${calcTriangleArea(
+      base,
+      height
+    )}`;
+  } else if (form === 'retângulo') {
+    return `O valor de área do retângulo é de: ${calcRectangleArea(
+      base,
+      height
+    )}`;
+  } else {
+    return 'Não foi possível fazer o cálculo, insira uma forma geométrica válida.';
+  }
+};
 
 // Desafio 7 - Crie a função catAndMouse
+const catAndMouse = (mouse, cat1, cat2) => {
+  const gato1 = Math.abs(cat1 - mouse);
+  const gato2 = Math.abs(cat2 - mouse);
+
+  if (gato1 < gato2) {
+    return 'cat1';
+  } else if (gato1 === gato2) {
+    return 'os gatos trombam e o rato foge';
+  } else {
+    return 'cat2';
+  }
+};
 
 // Desafio 8 - Crie a função fizzBuzz
 
