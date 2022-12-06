@@ -84,8 +84,39 @@ const fizzBuzz = (array) => {
 };
 
 // Desafio 9 - Crie a função encode e a função decode
+function encode = (param) => {
+  const arraySplit = param.split('');
+  let arrayCod = '';
+  for (let index = 0; index < arraySplit.length; index += 1) {
+    if (arraySplit[index] === 'a') {
+      arrayCod += '1';
+    } else if (arraySplit[index] === 'e') {
+      arrayCod += '2';
+    } else if (arraySplit[index] === 'i') {
+      arrayCod += '3';
+    } else if (arraySplit[index] === 'o') {
+      arrayCod += '4';
+    } else if (arraySplit[index] === 'u') {
+      arrayCod += '5';
+    } else {
+      arrayCod += arraySplit[index];
+    }
+  }
+  return arrayCod;
+};
 
 // Desafio 10 - Crie a função techList
+const techList = (tech, personName) => {
+  const techSort = tech.sort();
+  const techObj = [];
+  if (tech.length === 0) {
+    return [];
+  }
+  for (let index = 0; index < tech.length; index += 1) {
+    techObj.push({ tech: techSort[index], name: personName });
+  }
+  return techObj;
+};
 
 // Não modifique essas linhas
 module.exports = {
