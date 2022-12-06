@@ -11,6 +11,7 @@ const compareTrue = (name1, name2) => {
 const splitSentence = (name) => name.split(' ');
 
 // Desafio 3 - Crie a função concatName
+const concatName = (array) => `${array.pop()},${array.shift()}`;
 
 // Desafio 4 - Crie a função footballPoints
 
