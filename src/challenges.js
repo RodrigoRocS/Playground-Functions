@@ -2,19 +2,17 @@
 const compareTrue = (name1, name2) => {
   if (name1 === 'girafa' && name2 === 'elefante') {
     return true;
-  } else if (name1 === 'macaco' && name2 === 'elefante') {
-    return false;
   }
+  return false;
 };
-
 // Desafio 2 - Crie a função splitSentence
 const splitSentence = (name) => name.split(' ');
 
 // Desafio 3 - Crie a função concatName
-const concatName = (array) => `${array.pop()},${array.shift()}`;
+const concatName = (array) => `${array.pop()}, ${array.shift()}`;
 
 // Desafio 4 - Crie a função footballPoints
-const footballPoints = (wins, ties) => `${wins * 3 + ties} pontos`;
+const footballPoints = (wins, ties) => wins * 3 + ties;
 
 // Desafio 5 - Crie a função highestCount
 const highestCount = (array) => {
@@ -43,12 +41,12 @@ const calcAllAreas = (base, height, form) => {
       height
     )}`;
   } else if (form === 'retângulo') {
-    return `O valor de área do retângulo é de: ${calcRectangleArea(
+    return `O valor da área do retângulo é de: ${calcRectangleArea(
       base,
       height
     )}`;
   } else {
-    return 'Não foi possível fazer o cálculo, insira uma forma geométrica válida.';
+    return 'Não foi possível fazer o cálculo, insira uma forma geométrica válida';
   }
 };
 
@@ -84,7 +82,7 @@ const fizzBuzz = (array) => {
 };
 
 // Desafio 9 - Crie a função encode e a função decode
-function encode = (param) => {
+const encode = (param) => {
   const arraySplit = param.split('');
   let arrayCod = '';
   for (let index = 0; index < arraySplit.length; index += 1) {
@@ -103,6 +101,14 @@ function encode = (param) => {
     }
   }
   return arrayCod;
+};
+const decode = (param) => {
+  return param
+    .replaceAll('1', 'a')
+    .replaceAll('2', 'e')
+    .replaceAll('3', 'i')
+    .replaceAll('4', 'o')
+    .replaceAll('5', 'u');
 };
 
 // Desafio 10 - Crie a função techList
