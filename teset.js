@@ -14,7 +14,7 @@ const generatePhoneNumber = (param) => {
   let contador = 0;
   for (let index = 0; index < param.length; index += 1) {
     contador = 0;
-    for (let index2 = 0; index2 < param.length; index2 += 1) {
+    for (let index2 = 1; index2 < param.length; index2 += 1) {
       if (param[index] === param[index2]) {
         contador += 1;
         console.log(contador);
